@@ -21,7 +21,6 @@ export default {
 		data.data.children.forEach(child=>{
 			words = words.concat(child.data.title.split(' '));
 			mages.push(child.data.thumbnail);
-			console.log(words);
 		});
 		shuffle(words);
 		//words = words.join(' ');
