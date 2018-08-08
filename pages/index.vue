@@ -1,11 +1,25 @@
 <template>
 <div class=work>
+	<nav id=nav>
+	<a href=/auto>AUTOBLOG</a>
+	<a href=/dayjob>DAYJOB</a>
+	<a href=/chat>CHAT</a>
+	</nav>
 	<video playsinline autoplay muted loop id=splash src=back.mp4></video>
-	<h1 id=flash class=day>drownlux</h1>
+	<h1 id=flash class=day v-on:click="night">DROWN YOURSELF IN LUXURY</h1>
 </div>
 </template>
 <script>
-
+export default {
+	methods: {
+		night: function(e) {
+			document.getElementById('splash').src='night.mp4'
+			e.target.style.color = 'lime'
+			e.target.style.textShadow = 'none'
+			document.getElementById('nav').style.display='flex'
+		}
+	}
+}
 </script>
 <style>
 @keyframes blink {
@@ -65,4 +79,19 @@ h1 {
 .night {
   color: lime;
   cursor: pointer; }
+
+nav {
+	z-index: 9999;
+	position: relative;
+  	font-family: "vcr";
+  	font-size: 32px;
+}
+a {
+	color: lime;
+	text-decoration: none;
+	margin-right: 40px;
+}
+#nav {
+	display: none;
+}
 </style>
