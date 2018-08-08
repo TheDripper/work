@@ -3,7 +3,6 @@
 	<nav id=nav>
 	<a href=/auto>AUTOBLOG</a>
 	<a href=/dayjob>DAYJOB</a>
-	<a href=/chat>CHAT</a>
 	</nav>
 	<video playsinline autoplay muted loop id=splash src=back.mp4></video>
 	<h1 id=flash class=day v-on:click="night">DROWN YOURSELF IN LUXURY</h1>
