@@ -11,7 +11,7 @@ export default {
 <style>
 @font-face {
   font-family: "vcr";
-  src: url("~/assets/vcr.ttf"); }
+  src: url("/vcr.ttf"); }
 
 html, body {
   width: 100%;
