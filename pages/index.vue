@@ -1,44 +1,14 @@
 <template>
 <div class=work>
-	<nav id=nav>
-	<a href=/auto>AUTOBLOG</a>
-	<a href=/dayjob>DAYJOB</a>
-	</nav>
-	<video playsinline autoplay muted loop id=splash src=back.mp4></video>
-	<h1 id=flash class=day v-on:click="night">DROWN YOURSELF IN LUXURY</h1>
+	<h1 id=flash class=day v-on:click="night">TYLER HILL</h1>
 </div>
 </template>
 <script>
 export default {
-	methods: {
-		night: function(e) {
-			document.getElementById('splash').src='night.mp4'
-			e.target.style.color = 'lime'
-			e.target.style.textShadow = 'none'
-			document.getElementById('nav').style.display='flex'
-		}
-	}
+	
 }
 </script>
 <style>
-@keyframes blink {
-  50% {
-    opacity: 0.0; } }
-
-@-webkit-keyframes blink {
-  50% {
-    opacity: 0.0; } }
-
-.blink {
-  animation: blink 1s step-start 0s infinite;
-  -webkit-animation: blink 1s step-start 0s infinite; }
-
-@keyframes zoom {
-  from {
-    transform: translate(-50%, -50%) scale(1); }
-  to {
-    transform: translate(-50%, -10%) scale(2); } }
-
 @font-face {
   font-family: "vcr";
   src: url("~/assets/vcr.ttf"); }
