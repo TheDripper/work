@@ -21,6 +21,21 @@ export default {
 					name: "Berkeley Food Institute",
 					href: "https://food.berkeley.edu",
 					src: "food.jpg"
+				},
+				{
+					name: "Alameda Health Consortium",
+					href: "https://www.alamedahealthconsortium.org/",
+					src: "help.jpg"
+				},
+				{
+					name: "Newomics Biotechnology",
+					href: "https://www.newomics.com/",
+					src: "new.jpg"
+				},
+				{
+					name: "Face Reality Acne Clinic",
+					href: "https://facerealityacneclinic.com/",
+					src: "face.jpg"
 				}
 			]
 		}
