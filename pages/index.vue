@@ -1,6 +1,11 @@
 <template>
 <div class=work>
-	<h1 id=flash class=day v-on:click="night">TYLER HILL</h1>
+	<ul>
+	<li><a href=cc>Computer Courage</a></li>
+	<li><a href=wp>WP Scraper</a></li>
+	<li><a href=auto>AutoBlog</a></li>
+	</ul>
+	<h1>TYLER HILL</h1>
 </div>
 </template>
 <script>
@@ -11,7 +16,7 @@ export default {
 <style>
 @font-face {
   font-family: "vcr";
-  src: url("/vcr.ttf"); }
+  src: url("~/vcr.ttf"); }
 
 html, body {
   width: 100%;
@@ -23,44 +28,59 @@ html, body {
   align-items: center;
   background: blue; }
 
-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -10%) scale(2);
-  animation-duration: 10s;
-  animation-name: zoom; }
-
 h1 {
-  font-family: "vcr";
+  font-family: "vcr", Helvetica, Arial;
   font-size: 64px;
   text-transform: uppercase;
-  position: relative;
-  z-index: 999; }
-
-.day {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 999;
   color: white;
   cursor: pointer;
   text-shadow: 5px 5px 0 black, -5px -5px 0 black, -5px 5px 0 black, 5px -5px 0 black; }
 
-.night {
-  color: lime;
-  cursor: pointer; }
-
-nav {
-	z-index: 9999;
-	position: relative;
-  	font-family: "vcr";
-  	font-size: 32px;
-}
 a {
 	color: lime;
 	text-decoration: none;
 	margin-right: 40px;
 }
-#nav {
-	display: none;
+ul {
+	position: fixed;
+	top: 40px;
+	left: 40px;
+}
+li {
+	list-style: none;
+	color: lime;
+  	font-family: "vcr", Helvetica, Arial;
+	font-size: 48px;
+	text-transform: uppercase;
+}
+@media(max-width:600px) {
+	ul {
+		position: relative;
+		top: auto;
+		left: auto;
+		font-size: 32px;
+		padding: 0;
+	}
+	h1 {
+		right: 10px;
+		bottom: 10px;
+		font-size: 48px;
+  		text-shadow: 3px 3px 0 black, -3px -3px 0 black, -3px 3px 0 black, 3px -3px 0 black; 
+	}
+	.work {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 10px;
+		align-items: center;
+	}
+	li {
+		margin-bottom: 20px;
+	}
 }
 </style>

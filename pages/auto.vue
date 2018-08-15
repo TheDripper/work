@@ -1,5 +1,8 @@
 <template>
 <div id=post>
+	<div id=xplain>
+	<p>AutoBlog sends a GET call to reddit.json to get images + headlines from the front page, then shuffles these and presents it as abrasive poetry.</p>
+	</div>
 	<div id=words>
 		<h1 v-for="word in words">{{ word }}</h1>
 	</div>
@@ -76,11 +79,18 @@ h1 {
 }
 #mages, #words {
 	position: absolute;
-	top: 0;
+	top: 200px;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
+}
+#xplain {
+	color: white;
+	width: 100vw;
+	height: 500px;
+	background: linear-gradient(to bottom, black, transparent);
+	font-size: 32px;
 }
 </style>
