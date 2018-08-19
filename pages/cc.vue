@@ -1,7 +1,7 @@
 <template>
 <div id=cc>
 	<ul>	
-	<li v-for="site in sites" v-bind:style="{backgroundImage:'url('+site.src+')'}">
+	<li v-for="site in sites" :style="{backgroundImage:'url('+site.src+')'}">
 	<a :href="site.href">{{ site.name }}</a>
 	<a :href="site.href">{{ site.name }}</a>
 	<a :href="site.href">{{ site.name }}</a>
@@ -20,22 +20,22 @@ export default {
 				{
 					name: "Berkeley Food Institute",
 					href: "https://food.berkeley.edu",
-					src: "food.jpg"
+					src: "../food.jpg"
 				},
 				{
 					name: "Alameda Health Consortium",
 					href: "https://www.alamedahealthconsortium.org/",
-					src: "help.jpg"
+					src: "../help.jpg"
 				},
 				{
 					name: "Newomics Biotechnology",
 					href: "https://www.newomics.com/",
-					src: "new.jpg"
+					src: "../new.jpg"
 				},
 				{
 					name: "Face Reality Acne Clinic",
 					href: "https://facerealityacneclinic.com/",
-					src: "face.jpg"
+					src: "../face.jpg"
 				}
 			]
 		}
