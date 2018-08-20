@@ -133,4 +133,9 @@ h1 a {
 		justify-content: flex-end;
 	}
 }
+#cc {
+	width: 100vw;
+	max-width: 100%;
+	overflow-x: hidden;
+}
 </style>
