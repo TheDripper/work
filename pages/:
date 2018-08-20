@@ -1,16 +1,16 @@
 <template>
 <div id=cc>
 	<div id=tro>
-		<h1>I maintain hypertext documents at <a target=_blank href="https://www.computercourage.com">Computer Courage</a> in Emeryville California USA.</h1>	
+		<h1>I maintain hypertext documents at Computer Courage in Emeryville California USA.</h1>	
 	</div>
 	<ul>	
 	<li v-for="site in sites" :style="{backgroundImage:'url('+site.src+')'}">
-	<a target=_blank :href="site.href">{{ site.name }}</a>
-	<a target=_blank :href="site.href">{{ site.name }}</a>
-	<a target=_blank :href="site.href">{{ site.name }}</a>
-	<a target=_blank :href="site.href">{{ site.name }}</a>
-	<a target=_blank :href="site.href">{{ site.name }}</a>
-	<a target=_blank :href="site.href">{{ site.name }}</a>
+	<a :href="site.href">{{ site.name }}</a>
+	<a :href="site.href">{{ site.name }}</a>
+	<a :href="site.href">{{ site.name }}</a>
+	<a :href="site.href">{{ site.name }}</a>
+	<a :href="site.href">{{ site.name }}</a>
+	<a :href="site.href">{{ site.name }}</a>
 	</li>
 	</ul>	
 </div>
@@ -52,15 +52,6 @@ export default {
 	height: 100vh;
 	background-image: url('/dayjob.jpg');
 	background-size: 20%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-#tro h1 {
-	color: white;
-	font-size: 64px;
-	text-transform: uppercase;
-	text-shadow: 5px 5px 0 black, -5px -5px 0 black, -5px 5px 0 black, 5px -5px 0 black;
 }
 @font-face {
   font-family: "vcr";
@@ -108,12 +99,5 @@ a:nth-child(5) {
 	color: lime;
 	font-size: 84px;
 	z-index: 5;
-}
-h1 a {
-	position: relative;
-	color: cyan !important;
-	font-size: 64px !important;
-	text-shadow: 5px 5px 0 blue, -5px -5px 0 magenta, -5px 5px 0 blue, 5px -5px 0 magenta;
-	text-decoration: underline;
 }
 </style>

@@ -2,7 +2,6 @@
 <div class=work>
 	<ul>
 	<li><a href=cc>Computer Courage</a></li>
-	<li><a href=wp>WP Scraper</a></li>
 	<li><a href=auto>AutoBlog</a></li>
 	</ul>
 	<h1>TYLER HILL</h1>
@@ -10,7 +9,6 @@
 </template>
 <script>
 export default {
-	
 }
 </script>
 <style>
@@ -35,7 +33,7 @@ h1 {
   position: fixed;
   right: 30px;
   bottom: 30px;
-  z-index: 999;
+  z-index: 9999;
   color: white;
   cursor: pointer;
   text-shadow: 5px 5px 0 black, -5px -5px 0 black, -5px 5px 0 black, 5px -5px 0 black; }
