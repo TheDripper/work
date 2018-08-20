@@ -116,4 +116,20 @@ h1 a {
 	text-shadow: 5px 5px 0 blue, -5px -5px 0 magenta, -5px 5px 0 blue, 5px -5px 0 magenta;
 	text-decoration: underline;
 }
+@media(max-width:600px) {
+	#tro {
+		height: auto;
+		display: block;
+	}
+	#tro h1 {
+		font-size: 52px;
+	}
+	a {
+		transform: scale(0.5);
+	}
+	li {
+		height: 50vh;
+		background-size: 50%;
+	}
+}
 </style>
