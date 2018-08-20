@@ -124,14 +124,36 @@ h1 a {
 	#tro h1 {
 		font-size: 52px;
 	}
-	a {
-		transform: scale(0.5);
-	}
 	li {
 		height: 100vh;
 		background-size: 50%;
 		justify-content: flex-end;
 	}
+a:first-child {
+	color: purple;
+	font-size: 64px;
+	z-index: 2;
+}
+a:nth-child(2) {
+	color: magenta;
+	font-size: 52px;
+	z-index: 2;
+}
+a:nth-child(3) {
+	color: black;
+	font-size: 48px;
+	z-index: 3;
+}
+a:nth-child(4) {
+	color: blue;
+	font-size: 32px;
+	z-index: 4;
+}
+a:nth-child(5) {
+	color: lime;
+	font-size: 24px;
+	z-index: 5;
+}
 }
 #cc {
 	width: 100vw;
