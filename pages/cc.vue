@@ -128,8 +128,9 @@ h1 a {
 		transform: scale(0.5);
 	}
 	li {
-		height: 50vh;
+		height: 100vh;
 		background-size: 50%;
+		justify-content: flex-end;
 	}
 }
 </style>
