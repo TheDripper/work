@@ -125,9 +125,9 @@ h1 a {
 		font-size: 52px;
 	}
 	li {
-		height: 100vh;
+		height: 50vh;
 		background-size: 50%;
-		justify-content: flex-end;
+		display: flex;
 	}
 a:first-child {
 	color: purple;
