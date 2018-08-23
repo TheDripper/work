@@ -51,6 +51,7 @@ html, body {
 	padding: 0;
 	box-sizing: border-box;
 	overflow-x: hidden;
+	background: blue;
 }
 #tro img {
 	position: absolute;
@@ -68,7 +69,6 @@ html, body {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	overflow: hidden;
 }
 #tro h1 {
 	color: white;
@@ -91,11 +91,9 @@ li a:hover {
 	color: magenta;
 }
 ul {
-	height: 90vh;
 	padding: 0;
 	width: 700px;
 	padding-left: 5px;
-	overflow: scroll;
 }
 @font-face {
   font-family: "vcr";
