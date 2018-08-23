@@ -19,22 +19,26 @@ export default {
 				{
 					name: "Berkeley Food Institute",
 					href: "https://food.berkeley.edu",
-					src: "../food.jpg"
+				},
+				{
+					name: "Biochain US",
+					href: "https://www.biochain.com/"
 				},
 				{
 					name: "Alameda Health Consortium",
 					href: "https://www.alamedahealthconsortium.org/",
-					src: "../help.jpg"
 				},
 				{
 					name: "Newomics Biotechnology",
 					href: "https://www.newomics.com/",
-					src: "../new.jpg"
 				},
 				{
 					name: "Face Reality Acne Clinic",
 					href: "https://facerealityacneclinic.com/",
-					src: "../face.jpg"
+				},
+				{
+					name: "Create Real Impact",
+					href: "https://createrealimpact.com/",
 				}
 			]
 		}
@@ -61,17 +65,16 @@ html, body {
 	height: 100vh;
 	background: blue;
 	display: flex;
-	align-items: center;
-	justify-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	overflow: hidden;
 }
 #tro h1 {
 	color: white;
 	font-size: 64px;
 	text-transform: uppercase;
 	text-shadow: 5px 5px 0 black, -5px -5px 0 black, -5px 5px 0 black, 5px -5px 0 black;
-	position: absolute;
-	top: 0;
-	left: 0;
 	padding: 5px;
 	margin-bottom: 10px;
 }
@@ -88,7 +91,7 @@ li a:hover {
 	color: magenta;
 }
 ul {
-	height: 40vh;
+	height: 90vh;
 	padding: 0;
 	width: 700px;
 	padding-left: 5px;
