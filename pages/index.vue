@@ -1,8 +1,8 @@
 <template>
 <div class=work>
 	<ul>
-	<li><a href=cc>Computer Courage</a></li>
-	<li><a href=auto>AutoBlog</a></li>
+	<li><a href=port>Portfolio</a></li>
+	<li><a href=auto>Ideas</a></li>
 	</ul>
 	<h1>TYLER HILL</h1>
 </div>

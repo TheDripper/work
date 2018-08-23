@@ -1,7 +1,8 @@
 <template>
-<div id=cc>
+<div id=port>
 	<div id=tro>
-		<h1>I maintain hypertext documents at <a target=_blank href="https://www.computercourage.com">Computer Courage</a> in Emeryville California USA.</h1>	
+		<h1>Tyler Hill builds Hypertext Documents</h1>
+		<img src=/dayjob.jpg />
 	</div>
 	<ul>	
 	<li v-for="site in sites" :style="{backgroundImage:'url('+site.src+')'}">
@@ -50,8 +51,7 @@ export default {
 	font-family: "vcr", "courier new";
 	width: 100vw;
 	height: 100vh;
-	background-image: url('/dayjob.jpg');
-	background-size: 20%;
+	background: blue;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -61,6 +61,9 @@ export default {
 	font-size: 64px;
 	text-transform: uppercase;
 	text-shadow: 5px 5px 0 black, -5px -5px 0 black, -5px 5px 0 black, 5px -5px 0 black;
+	position: absolute;
+	top: 5px;
+	left: 5px;
 }
 @font-face {
   font-family: "vcr";
