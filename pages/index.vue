@@ -1,84 +1,181 @@
 <template>
-<div class=work>
-	<ul>
-	<li><a href=port>Portfolio</a></li>
-	<li><a href=auto>Ideas</a></li>
-	</ul>
-	<h1>TYLER HILL</h1>
+<div id=port>
+	<div id=tro>
+		<h1>Tyler Hill JS/CSS/PHP</h1>
+	</div>
+	<ul>	
+	<li v-for="site in sites"> 
+	<div class=copy>
+	<a class=head target=_blank :href="site.href">{{ site.name }}</a>
+	<p v-html="site.desc"></p>
+	</div>
+	<div class=mage :style="{backgroundImage:'url('+site.src+')'}" >
+	</div>
+	</li>
+	</ul>	
 </div>
 </template>
 <script>
 export default {
+	asyncData(context) {
+		return {
+			sites: [
+				{
+					name: "Berkeley Food Institute",
+					href: "https://food.berkeley.edu",
+					desc: "Built custom visual layout system for <a target=_blank href='https://food.berkeley.edu/priorities/'>primary</a> + <a target=_blank href='https://food.berkeley.edu/about-us/centers/dfs/'>secondary</a> landing pages + <a target=_blank href='https://food.berkeley.edu/resources/news/'>infinite scroll masonry blog</a>, controlled via ACF",
+					src: "/bfi1.png"
+				},
+				{
+					name: "Biochain US",
+					href: "https://www.biochain.com/",
+					desc: "Full WP site build from provided mockups w/ custom Woocommerce Shipping/Checkout functionality",
+					src: "/bio.png"
+
+				},
+				{
+					name: "Face Reality Acne Clinic",
+					href: "https://facerealityacneclinic.com/",
+					desc: "Custom JS cart builder to allow Woocommerce shopping from full inventory list, custom Woocommerce shipping router w/ FedEx/USPS API + user roles",
+					src: "/face.png"
+				},
+				{
+					name: "Alameda Health Consortium",
+					href: "https://www.alamedahealthconsortium.org/",
+					desc: "Full WP site build from provided mockups incuding WP REST API to merge calendar events across installs",
+					src: "/ahc.png"
+				},
+				{
+					name: "Create Real Impact",
+					href: "https://createrealimpact.com/",
+					desc: "Built content submission + voting system for teen driving/texting PSA contest"
+				},
+				{
+					name: "Newomics Biotechnology",
+					href: "https://www.newomics.com/",
+				}
+			]
+		}
+	}
 }
 </script>
 <style>
+.mage {
+	height: 500px;
+	width: 50%;
+	flex-shrink: 0;
+	background-size: contain;
+}
+.copy {
+	padding: 0 20px;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	background: blue;
+}
+#tro img {
+	width: 400px;
+	height: 400px;
+}
+#tro {
+	font-family: "vcr", "courier new";
+	width: 100vw;
+	background: blue;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+h1 {
+	color: white;
+	font-size: 64px;
+	text-transform: uppercase;
+	text-shadow: 5px 5px 0 black, -5px -5px 0 black, -5px 5px 0 black, 5px -5px 0 black;
+	padding: 5px;
+	margin-bottom: 10px;
+	text-align: right;
+	width: 100%;
+}
+li {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding-bottom: 50px;
+	padding-top: 0;
+	margin: 0;
+}
+li:after {
+	content: '';
+	height: 50px;
+	background-image: url('/static.jpg');
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-size: cover;
+}
+li img {
+	flex-shrink: 0;
+}
+li:nth-child(even) .mage {
+	order: 1;
+}
+li:nth-child(even) .copy {
+	order: 2;
+}
+li a {
+	color: lime;
+	text-transform: uppercase;
+	font-family: "vcr";
+	text-decoration: none;
+}
+li a.head {
+	font-size: 54px;
+}
+li a:hover {
+	color: cyan;
+}
+ul {
+	padding: 0;
+	width: 100%;
+}
+li p {
+	font-family: "courier new";
+	font-size: 32px;
+	color: white;
+}
 @font-face {
   font-family: "vcr";
   src: url("~/vcr.ttf"); }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: blue; }
-
-h1 {
-  font-family: "vcr", Helvetica, Arial;
-  font-size: 64px;
-  text-transform: uppercase;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  z-index: 9999;
-  color: white;
-  cursor: pointer;
-  text-shadow: 5px 5px 0 black, -5px -5px 0 black, -5px 5px 0 black, 5px -5px 0 black; }
-
-a {
-	color: lime;
-	text-decoration: none;
-	margin-right: 40px;
-}
-ul {
-	position: fixed;
-	top: 40px;
-	left: 40px;
-}
-li {
-	list-style: none;
-	color: lime;
-  	font-family: "vcr", Helvetica, Arial;
-	font-size: 48px;
-	text-transform: uppercase;
-}
-@media(max-width:600px) {
-	ul {
-		position: relative;
-		top: auto;
-		left: auto;
-		font-size: 32px;
-		padding: 0;
-	}
+@media(max-width: 820px) {
 	h1 {
-		right: 10px;
-		bottom: 10px;
-		font-size: 48px;
-  		text-shadow: 3px 3px 0 black, -3px -3px 0 black, -3px 3px 0 black, 3px -3px 0 black; 
+		font-size: 32px;
+		text-shadow: 3px 3px 0 black, -3px -3px 0 black, -3px 3px 0 black, 3px -3px 0 black;
 	}
-	.work {
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 0 10px;
-		align-items: center;
+	li a.head {
+		font-size: 32px;
 	}
+	li p {
+		font-size: 26px;
+	}
+}
+@media(max-width: 600px) {
 	li {
-		margin-bottom: 20px;
+		flex-direction: column;
+	}
+	.mage {
+		width: 100%;
+		height: 300px;
+		order: 2 !important;
+	}
+	.copy {
+		order: 1 !important;
+		padding: 10px;
 	}
 }
 </style>
