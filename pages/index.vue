@@ -48,11 +48,8 @@ export default {
 				{
 					name: "Create Real Impact",
 					href: "https://createrealimpact.com/",
-					desc: "Built content submission + voting system for teen driving/texting PSA contest"
-				},
-				{
-					name: "Newomics Biotechnology",
-					href: "https://www.newomics.com/",
+					desc: "Built content submission + voting system for teen driving/texting PSA contest",
+					src: "/real.png"
 				}
 			]
 		}
