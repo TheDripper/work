@@ -1,7 +1,15 @@
 <template>
 <div id=port>
 	<div id=tro>
-		<h1>Tyler Hill JS/CSS/PHP</h1>
+		<div class=slide>
+			<img src="/word.svg" />
+			<h1>PHP</h1>
+		</div>
+		<div class=slide>
+			<img src="/node.svg" />
+			<h1>JS</h1>
+		</div>
+		<h1 id=name>Tyler Hill</h1>
 	</div>
 	<ul>	
 	<li v-for="site in sites"> 
@@ -13,6 +21,11 @@
 	</div>
 	</li>
 	</ul>	
+	<div id=end>
+	<a target=_blank href='https://github.com/thedripper'>Github</a>
+	<a target=_blank href='https://www.linkedin.com/in/tyler-hill-936798110/'>linkedin</a>
+	<a target=_blank href='mailto:tylerhillwebdev@gmail.com'>tylerhillwebdev@gmail.com</a>
+	</div>
 </div>
 </template>
 <script>
@@ -57,6 +70,31 @@ export default {
 }
 </script>
 <style>
+.slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+}
+.slide h1 {
+	text-align: center;
+	color: lime;
+	text-shadow: none;
+}
+#end {
+	width: 100vw;
+	height: 100vh;
+	background: url('/dayjob.jpg');
+	background-size: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#end a {
+	text-decoration: none;
+	font-family: "vcr";
+}
 .mage {
 	height: 500px;
 	width: 50%;
@@ -73,20 +111,26 @@ html, body {
 	overflow-x: hidden;
 	background: blue;
 }
+#name {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
 #tro img {
 	width: 400px;
 	height: 400px;
 }
 #tro {
+	position: relative;
 	font-family: "vcr", "courier new";
 	width: 100vw;
+	height: 100vh;
 	background: blue;
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-between;
+	justify-content: space-around;
+	padding-top: 20px;
 }
-h1 {
+h1, #end a {
 	color: white;
 	font-size: 64px;
 	text-transform: uppercase;
