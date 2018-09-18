@@ -1,7 +1,7 @@
 <template>
 <div id=port>
 	<div id=tro>
-		<div class=slide>
+		<div class=slide v-on:click="slideTo(event)">
 			<img src="/word.svg" />
 			<h1>PHP</h1>
 		</div>
@@ -11,7 +11,7 @@
 		</div>
 		<h1 id=name>Tyler Hill</h1>
 	</div>
-	<ul>	
+	<ul id=php>	
 	<li v-for="site in sites"> 
 	<div class=copy>
 	<a class=head target=_blank :href="site.href">{{ site.name }}</a>
@@ -30,6 +30,11 @@
 </template>
 <script>
 export default {
+	methods: {
+		slideTo: function(e) {
+			console.log(e.target)
+		}
+	},
 	asyncData(context) {
 		return {
 			sites: [
