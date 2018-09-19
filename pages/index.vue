@@ -146,6 +146,11 @@ export default {
 	font-family: "vcr";
 	transform: translateX(20%);
 }
+@media(max-width:900px) {
+	#jslist {
+		transform: none;
+	}
+}
 #jshole {
 	height: 100vh;
 	width: 50vw;
@@ -166,6 +171,14 @@ export default {
 	width: 50vw;
 	shape-outside: circle(65% at 0 50%);
 	float: left;
+}
+@media(max-width:600px) {
+	#phhole {
+		shape-outside: circle(45% at -30px 50%);
+	}
+	#phlist {
+		padding-left: 15px;
+	}
 }
 #phdats {
 	position: absolute;
