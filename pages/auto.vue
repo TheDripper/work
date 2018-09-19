@@ -1,19 +1,30 @@
 <template>
 <div id=post>
+	<div id=left>
 	<div id=mages>
-		<li v-for="mage in mages">
-		<a target=_blank :href="'https://reddit.com' + mage.link">
-		<img :src="mage.mage" @mouseover="imgBack" />
+		<li v-for="post in posts">
+		<a target=_blank :href="'https://reddit.com' + post.link">
+		<img :src="post.mage" @mouseover="imgBack" />
 		</a>
 		</li>
 	</div>
 	<div id=words>
-		<div v-for="word in words" class=wrap>
-		<h1>{{ word.word }}</h1>
-		<a target=_blank :href="'https://reddit.com' + word.link"></a>
+		<div v-for="post in posts" class=wrap>
+		<h1>{{ post.word }}</h1>
+		<a target=_blank :href="'https://reddit.com' + post.link" :data-words="post.title" @mouseover="loadWords"></a>
 		</div>
 	</div>
+	<div id=swipe>
 	<h1>SWIPE>></h1>
+	<h1>SWIPE>></h1>
+	<h1>SWIPE>></h1>
+	<h1>SWIPE>></h1>
+	<h1>SWIPE>></h1>
+	</div>
+	</div>
+	<div id=right>
+	<h2 id=title></h2>
+	</div>
 </div>
 </template>
 <script>
@@ -24,25 +35,37 @@ export default {
 		imgBack: function(event){
 			let src = event.target.src
 			document.querySelector('#post').style.backgroundImage = 'url('+src+')'
+		},
+		loadWords: function(event) {
+			let words = event.target.dataset.words
+			console.log(words)
+			document.querySelector('#title').innerHTML = words
 		}
 	},
 	async asyncData(context) {
-		let { data } = await axios('https://www.reddit.com/r/pics/.json')
-		let mages = []
-		let words = []
+		let { data } = await axios('https://www.reddit.com/r/pics/.json?limit=100')
+		let posts = []
 		data.data.children.forEach(child=>{
 			//words = words.concat(child.data.title.split(' ')[0])
-			let word = { word:child.data.title.split(' ')[0], link: child.data.permalink }
-			words = words.concat(word)
+			let post = { 
+				word:child.data.title.split(' ')[0], 
+				title: child.data.title,
+				link: child.data.permalink,
+				mage: child.data.thumbnail
+			}
+			//words = words.concat(word)
 			//mages.push(child.data.thumbnail)
-			let mage = { mage:child.data.thumbnail, link: child.data.permalink }
-			mages.push(mage)
+			//let mage = { mage:child.data.thumbnail, link: child.data.permalink }
+			posts.push(post)
 		});
-		return { mages: mages, words: words }
+		return { posts: posts }
 	}
 }
 </script>
 <style>
+#title {
+	background: lime;
+}
 html, body {
 	background: lime;
 }
@@ -51,10 +74,13 @@ li {
 }
 #post {
 	display: flex;
-	flex-direction: column;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+}
+#left {
+	display: flex;
+	flex-direction: column;
 }
 h1 {
 	padding: 10px;
@@ -75,17 +101,16 @@ a {
 }
 #mages {
 	display: flex;
-	width: 100vw;
-	overflow-y: visible;
+	width: 50vw;
+	overflow: hidden;
 	overflow-x: scroll;
 	position: relative;
 	height: 150px;
 	flex-shrink: 0;
-	transition: all 2s ease;
 }
 #words {
 	display: flex;
-	width: 100vw;
+	width: 50vw;
 	overflow: hidden;
 	overflow-x: scroll;
 }
@@ -97,6 +122,12 @@ a {
 	flex-direction: column;
 	align-items: center;
 	cursor: pointer;
+	position: relative;
+}
+.wrap a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 .wrap h1 {
 	width: 20px;
@@ -113,6 +144,16 @@ img {
 	height: 150px;
 	cursor: pointer;
 	z-index: 999;
-	transition: all 5s ease;
+}
+#swipe {
+display: flex;
+}
+#swipe h1 {
+	 color: red;
+}
+#right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 </style>
