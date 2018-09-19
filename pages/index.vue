@@ -174,7 +174,7 @@ export default {
 }
 @media(max-width:600px) {
 	#phhole {
-		shape-outside: circle(45% at -30px 50%);
+		shape-outside: circle(55% at -30px 50%);
 	}
 	#phlist {
 		padding-left: 15px;
