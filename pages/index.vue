@@ -80,13 +80,13 @@ let js = [
 		name: "Autoblog",
 		href: "/auto",
 		desc: "AutoBlog pulls images/text from /r/pics.json but the format can be used on any blog you like.",
-		src: "/bfi1.png"
+		src: "/auto.png"
 	},
 	{
 		name: "WP Scraper",
-		href: "/scaper",
-		desc: "Scraper gonna scrape",
-		src: "/bfi1.png"
+		href: "https://github.com/TheDripper/wpstatic",
+		desc: "IN PROGRESS - Nuxt app to scrape a WP install + generate a static version;;; stuck on chunking templates into <500 lines of markup",
+		src: "/static.jpg"
 	}
 ]
 export default {
