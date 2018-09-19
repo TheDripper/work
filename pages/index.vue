@@ -116,6 +116,7 @@ export default {
 				document.querySelector('#php').style.width = '0';
 				document.querySelector('#jslist').style.opacity = '1';
 				document.querySelector('#jslist').style.marginTop = '8%';
+				document.querySelector('#phlist').style.display = 'none';
 				this.sites = js
 			} else {
 				e.target.parentNode.style.width = '50vw'
@@ -123,6 +124,7 @@ export default {
 				document.querySelector('#php').style.width = '50vw';
 				document.querySelector('#jslist').style.opacity = '0';
 				document.querySelector('#jslist').style.marginTop = '8%';
+				document.querySelector('#phlist').style.display = 'inherit';
 				this.sites = []
 			}
 		}
