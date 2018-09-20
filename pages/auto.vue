@@ -128,6 +128,7 @@ a {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	z-index: 999;
 }
 .wrap h1 {
 	width: 20px;
