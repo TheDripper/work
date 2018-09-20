@@ -247,6 +247,7 @@ export default {
 #end a {
 	text-decoration: none;
 	font-family: "vcr";
+	word-break: break-all;
 }
 #name {
 	font-family: "vcr";
