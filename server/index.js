@@ -31,17 +31,12 @@ async function start() {
   app.post('/hit',async function(req,res,next){
         let { data } = await axios(req.body.hit)
         let text = []
-	let mages = []
         const $ = cheerio.load(data)
         $('p').each(function(index,elem){
         	text.push({text:$(this).text(),id:'graph'+index})
         })
-	$('img').each(function(){
-		console.log($(this).attr('src'))
-	})
 	let sender = {
 		text: text,
-		mages: mages
 	}
 	res.send(sender)
   })

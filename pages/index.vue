@@ -7,9 +7,9 @@
 		<div id=phhole></div>
 		<ul id=phlist>
 		<li>3 years building custom WP themes + plugins</li>
-		<li>Woo Shipping/Checkout mods, CPTs, User Roles, REST API, etc. etc.</li>
-		<li>Fluent CSS: Full site design + build, mobile layers for any device</li>
-		<li>Critical Rendering Path audits to improve slow load</li>
+		<li>CPT, REST API, User Roles, Woo, etc. etc.</li>
+		<li>Full site design + build/mobile layers</li>
+		<li>Slow load audits: check yer <a target=_blank href='https://developers.google.com/web/fundamentals/performance/critical-rendering-path/'>Critical Rendering Path!</a></li>
 		<li>SCROLL DOWN FOR WORK VVVVVV</li>
 		</ul>
 		</div>
@@ -81,6 +81,12 @@ let php = [
 				}
 ]
 let js = [
+	{
+		name: "Newspaper",
+		href: 'http://drownlux.net/news/',
+		desc: 'hosted on my live app site (drownlux), Newspaper lists the headlines from reddit.com/r/worldnews and offers the target articles in text-only ADD friendly formatting.',
+		src: '/news.png'
+	},
 	{
 		name: "Autoblog",
 		href: "/auto",
@@ -191,6 +197,9 @@ export default {
 	left: 0;
 	pointer-events: none;
 	width: 100%;
+}
+#phdats li a {
+	pointer-events: auto;
 }
 #phlist {
 	width: 100%;
