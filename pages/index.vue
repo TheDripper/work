@@ -1,30 +1,38 @@
 <template>
 <div id=port>
 <div id=shapes>
-	<div id=php class=half>
-		<img id=word class=mass src=/word.svg @click="word">
-		<div id=phdats>
-		<div id=phhole></div>
-		<ul id=phlist>
-		<li>3 years building custom WP themes + plugins</li>
-		<li>CPT, REST API, User Roles, Woo, etc. etc.</li>
-		<li>Full site design + build/mobile layers</li>
-		<li>Slow load audits: check yer <a target=_blank href='https://developers.google.com/web/fundamentals/performance/critical-rendering-path/'>Critical Rendering Path!</a></li>
-		<li>SCROLL DOWN FOR WORK VVVVVV</li>
-		</ul>
+	<div id=php class=half :class="{ 'open': isOpen=='php' }">
+		<div id=leftrow @click="word" class=row>
+			<h1>PHP</h1>
+			<h1> < </h1>
 		</div>
-
-	</div>
-	<div id=js class=half>
-		<img id=node class=mass src=/ode.svg @click="node">
-		<div id=jsdats>
-		<div id=jshole></div>
-		<ul id=jslist>
-		<li>Node/Vue/Nuxt/React</li>
-		<li>ES6+, async, hoisting, closures...</li>
-		<li>Exploring JAM stack+ CSS as art</li>
+		<img id=word class=mass src=/word.svg @click="word">
+		<ul id=phlist class=list>
+		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
+		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
+		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
+		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
+		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
+		<li>SCROLL DOWN FOR WORK VVVVVV</li>
+		<li>SCROLL DOWN FOR WORK VVVVVV</li>
 		<li>SCROLL DOWN FOR WORK VVVVVV</li>
 		</ul>
+	</div>
+	<div id=js class=half :class="{ 'open': isOpen=='js' }">
+		<img id=node class=mass src=/ode.svg @click="node">
+		<ul id=jslist class=list>
+		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
+		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
+		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
+		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
+		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
+		<li>SCROLL DOWN FOR WORK VVVVVV</li>
+		<li>SCROLL DOWN FOR WORK VVVVVV</li>
+		<li>SCROLL DOWN FOR WORK VVVVVV</li>
+		</ul>
+		<div id=rightrow @click="node" class=row>
+			<h1>JS</h1>
+			<h1> > </h1>
 		</div>
 	</div>
 	<h1 id=name>Tyler Hill</h1>
@@ -103,69 +111,42 @@ let js = [
 export default {
 	
 	methods: {
-		word: function(e) {
-			if(!e.target.classList.contains('open')) {
-				e.target.parentNode.style.width = '100vw'
-				e.target.classList.add('open')
-				e.target.style.float='left'
-				document.querySelector('#js').style.width = '0';
-				document.querySelector('#phlist').style.opacity = '1';
-				document.querySelector('#phlist').style.marginTop = '8%';
+		word: function(event) {
+			if(!this.isOpen) {
 				this.sites = php
+				this.isOpen = 'php'
+				document.querySelector('#js').style.width='0';
 			} else {
-				e.target.parentNode.style.width = '50vw'
-				e.target.classList.remove('open')
-				document.querySelector('#js').style.width = '50vw';
-				document.querySelector('#phlist').style.opacity = '0';
 				this.sites = []
+				this.isOpen = ''
+				document.querySelector('#js').style.width='50vw';
 			}
 		},
-		node: function(e) {
-			if(!e.target.classList.contains('open')) {
-				e.target.parentNode.style.width = '100vw'
-				e.target.classList.add('open')
-				document.querySelector('#php').style.width = '0';
-				document.querySelector('#jslist').style.opacity = '1';
-				document.querySelector('#jslist').style.marginTop = '8%';
-				document.querySelector('#phlist').style.display = 'none';
+		node: function(event) {
+			document.querySelector('#php').style.width='0';
+			if(!this.isOpen) {
 				this.sites = js
+				this.isOpen = 'js'
+				document.querySelector('#php').style.width='0';
 			} else {
-				e.target.parentNode.style.width = '50vw'
-				e.target.classList.remove('open')
-				document.querySelector('#php').style.width = '50vw';
-				document.querySelector('#jslist').style.opacity = '0';
-				document.querySelector('#jslist').style.marginTop = '8%';
-				document.querySelector('#phlist').style.display = 'inherit';
 				this.sites = []
+				this.isOpen = ''
+				document.querySelector('#php').style.width='50vw';
 			}
 		}
 	},
 	asyncData(context) {
 		return {
-			sites: []
+			sites: [],
+			isOpen: ''
 		}
 	}
 }
 </script>
 <style>
-#jslist {
-	width: 100%;
-	margin-top: 1%;
-	opacity: 0;
-	transition: all 0.5s ease;
-	color: lime;
-	font-family: "vcr";
-	transform: translateX(20%);
-}
-@media(max-width:900px) {
-	#jslist {
-		transform: none;
-	}
-}
 #jshole {
 	height: 100vh;
 	width: 50vw;
-	shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 	float: right;
 	transform: translateX(50%);
 }
@@ -180,16 +161,7 @@ export default {
 #phhole {
 	height: 100vh;
 	width: 50vw;
-	shape-outside: circle(65% at 0 50%);
 	float: left;
-}
-@media(max-width:600px) {
-	#phhole {
-		shape-outside: circle(55% at -30px 50%);
-	}
-	#phlist {
-		padding-left: 15px;
-	}
 }
 #phdats {
 	position: absolute;
@@ -201,23 +173,27 @@ export default {
 #phdats li a {
 	pointer-events: auto;
 }
-#phlist {
+#phlist, #jslist {
 	width: 100%;
 	margin-top: 1%;
 	opacity: 0;
 	transition: all 0.5s ease;
 	color: lime;
 	font-family: "vcr";
+	padding-right: 10px;
+	word-break: break-all;
 }
-#phlist li {
+.list li {
 	font-size: 5vmin;
 	margin-bottom: 5vmin;
 	list-style: none;
+	display: inline;
 }
-#jslist li {
-	font-size: 5vmin;
-	margin-bottom: 5vmin;
-	list-style: none;
+.list li:nth-child(3n + 2) {
+	color: cyan;
+}
+.list li:nth-child(3n + 3) {
+	color: fuchsia;
 }
 #shapes {
 	display: flex;
@@ -228,9 +204,28 @@ export default {
 }
 #node {
 	transform: translateX(50%);
+	shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 7% 75%, 7% 25%);
 }
 #word {
 	transform: translateX(-50%);
+	shape-outside: circle(50%);
+}
+.open {
+	width: 100vw !important;
+}
+.open .list {
+	opacity: 1 !important;
+}
+.open #word {
+	transform: translateX(0) !important;
+	width: auto;
+	float: left;
+}
+
+.open #node {
+	transform: translateX(0) !important;
+	width: auto;
+	float: right;
 }
 .half {
 	width: 50vw;
@@ -242,6 +237,7 @@ export default {
 	width: 100%;
 	height: 100vh;
 	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 #end {
 	width: 100vw;
@@ -369,5 +365,35 @@ li p {
 		order: 1 !important;
 		padding: 10px;
 	}
+}
+#leftrow {
+	position: absolute;
+	right: 0;
+	top: 10vw;
+}
+#leftrow h1 {
+	color: lime;
+	text-shadow: 2px 2px 0 fuchsia, -2px -2px 0 cyan, -2px 2px 0 fuchsia, 2px -2px 0 cyan;
+	font-family: "vcr";
+}
+#rightrow {
+	position: absolute;
+	left: 0;
+	bottom: 20vh;
+}
+#rightrow h1 {
+	color: lime;
+	text-shadow: 2px 2px 0 fuchsia, -2px -2px 0 cyan, -2px 2px 0 fuchsia, 2px -2px 0 cyan;
+	font-family: "vcr";
+}
+.row {
+	cursor: pointer;
+}
+.open .row {
+	position: absolute;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: auto !important;
+	top: auto !important;
 }
 </style>
