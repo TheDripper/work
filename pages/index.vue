@@ -6,7 +6,7 @@
 			<h1>PHP</h1>
 			<h1> < </h1>
 		</div>
-		<img id=word class=mass src=/word.svg @click="word">
+		<img id=word class=mass src=/wpdiapink.svg @click="word">
 		<ul id=phlist class=list>
 		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
 		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
@@ -19,7 +19,7 @@
 		</ul>
 	</div>
 	<div id=js class=half :class="{ 'open': isOpen=='js' }">
-		<img id=node class=mass src=/ode.svg @click="node">
+		<img id=node class=mass src=/odedia.svg @click="node">
 		<ul id=jslist class=list>
 		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
 		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
@@ -204,7 +204,7 @@ export default {
 }
 #node {
 	transform: translateX(50%);
-	shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 7% 75%, 7% 25%);
+	shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 #word {
 	transform: translateX(-50%);
@@ -388,6 +388,7 @@ li p {
 }
 .row {
 	cursor: pointer;
+	z-index: 999;
 }
 .open .row {
 	position: absolute;
