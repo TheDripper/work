@@ -9,26 +9,24 @@
 		<img id=word class=mass src=/wpdiapink.svg @click="word">
 		<ul id=phlist class=list>
 		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
-		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
-		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
-		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
-		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
-		<li>SCROLL DOWN FOR WORK VVVVVV</li>
-		<li>SCROLL DOWN FOR WORK VVVVVV</li>
-		<li>SCROLL DOWN FOR WORK VVVVVV</li>
+		<li>REST API / Woocommerce / MailChimp Integration / Payment Processing / User Roles / etc.etc.etc...</li>
+		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
+		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
+		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
 		</ul>
 	</div>
 	<div id=js class=half :class="{ 'open': isOpen=='js' }">
 		<img id=node class=mass src=/odedia.svg @click="node">
 		<ul id=jslist class=list>
-		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
-		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
-		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
-		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
-		<li>Node/Vue/Nuxt+JAM/STATIC+CSS = the future of web and art.</li>
-		<li>SCROLL DOWN FOR WORK VVVVVV</li>
-		<li>SCROLL DOWN FOR WORK VVVVVV</li>
-		<li>SCROLL DOWN FOR WORK VVVVVV</li>
+		<li>JS+CSS = the future of web as art.</li>
+		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
+		<li>JS+CSS = the future of web as art.</li>
+		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
+		<li>JS+CSS = the future of web as art.</li>
+		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
+		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
+		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
+		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
 		</ul>
 		<div id=rightrow @click="node" class=row>
 			<h1>JS</h1>
@@ -396,5 +394,18 @@ li p {
 	bottom: 0 !important;
 	right: auto !important;
 	top: auto !important;
+}
+@media(max-width:1200px) {
+	.open .mass {
+		height: 500px !important;
+	}
+}
+@media(max-width:650px) {
+	.open .mass {
+		height: 200px !important;
+	}
+}
+.scroll {
+	color: white !important;
 }
 </style>
