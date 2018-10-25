@@ -92,6 +92,13 @@ let php = [
 ]
 let js = [
 	{
+		name: "Color SKU",
+		href: '/colors',
+		desc: 'Blog example pulling color-based stock imagery form pixabay api',
+		src: '/colors.png'
+
+	},
+	{
 		name: "Newspaper",
 		href: 'http://drownlux.net/news/',
 		desc: 'hosted on my live app site (drownlux), Newspaper lists the headlines from reddit.com/r/worldnews and offers the target articles in text-only ADD friendly formatting.',
