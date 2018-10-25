@@ -10,6 +10,8 @@
 		<ul id=phlist class=list>
 		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
 		<li>REST API / Woocommerce / MailChimp Integration / Payment Processing / User Roles / etc.etc.etc...</li>
+		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
+		<li>REST API / Woocommerce / MailChimp Integration / Payment Processing / User Roles / etc.etc.etc...</li>
 		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
 		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
 		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
