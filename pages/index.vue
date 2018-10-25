@@ -14,9 +14,6 @@
 		<li>REST API / Woocommerce / MailChimp Integration / Payment Processing / User Roles / etc.etc.etc...</li>
 		<li>fluent CSS+PHP+JS = fully customized themes + plugins to act and look however you want.</li>
 		<li>REST API / Woocommerce / MailChimp Integration / Payment Processing / User Roles / etc.etc.etc...</li>
-		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
-		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
-		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
 		</ul>
 	</div>
 	<div id=js class=half :class="{ 'open': isOpen=='js' }">
@@ -28,9 +25,12 @@
 		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
 		<li>JS+CSS = the future of web as art.</li>
 		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
-		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
-		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
-		<li class=scroll>SCROLL DOWN FOR WORK <span>VVVVVV</span></li>
+		<li>JS+CSS = the future of web as art.</li>
+		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
+		<li>JS+CSS = the future of web as art.</li>
+		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
+		<li>JS+CSS = the future of web as art.</li>
+		<li>ES6+, Node/Vue/Nuxt/, JAM Stack + static gen...</li>
 		</ul>
 		<div id=rightrow @click="node" class=row>
 			<h1>JS</h1>
@@ -117,11 +117,13 @@ export default {
 			if(!this.isOpen) {
 				this.sites = php
 				this.isOpen = 'php'
-				document.querySelector('#js').style.width='0';
+				document.querySelector('#js').style.width='0'
+				document.querySelector('#name').textContent='SCROLL DOWN FOR WORK VVVVVVV'
 			} else {
 				this.sites = []
 				this.isOpen = ''
-				document.querySelector('#js').style.width='50vw';
+				document.querySelector('#js').style.width='50vw'
+				document.querySelector('#name').textContent='Tyler Hill'
 			}
 		},
 		node: function(event) {
@@ -130,10 +132,12 @@ export default {
 				this.sites = js
 				this.isOpen = 'js'
 				document.querySelector('#php').style.width='0';
+				document.querySelector('#name').textContent='SCROLL DOWN FOR WORK VVVVVVV';
 			} else {
 				this.sites = []
 				this.isOpen = ''
 				document.querySelector('#php').style.width='50vw';
+				document.querySelector('#name').textContent='Tyler Hill'
 			}
 		}
 	},
@@ -289,6 +293,12 @@ h1, #end a {
 	margin-bottom: 10px;
 	text-align: right;
 	width: 100%;
+}
+@media(max-width:500px) {
+	#end a {
+		font-size: 32px;
+		text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black;
+	}
 }
 .site {
 	list-style: none;
