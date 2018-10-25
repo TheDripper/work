@@ -27,25 +27,26 @@
 </div>
 <div class=mages id=two>
 <ul>
-	<span class=after id=redcol></span>
+	<span class=after id=redcol><a href=/posts/archive/>Jul</a></span>
 	<li id=blu v-for="hit in hits.red" v-bind:style="{ backgroundImage:'url('+hit+')' }">
 	</li>
 </ul>
 <ul>
-	<span class=after id=orangecol></span>
+	<span class=after id=orangecol><a href=/posts/archive/>Aug</a></span>
 	<li id=tur v-for="hit in hits.orange" v-bind:style="{ backgroundImage:'url('+hit+')' }">
 	</li>
 </ul>
 <ul>
-	<span class=after id=pinkcol></span>
+	<span class=after id=pinkcol><a href=/posts/archive/>Sep</a></span>
 	<li id=lac v-for="hit in hits.pink" v-bind:style="{ backgroundImage:'url('+hit+')' }">
 	</li>
 </ul>
 <ul>
-	<span class=after id=graycol></span>
+	<span class=after id=graycol><a href=/posts/archive/>Oct</a></span>
 	<li id=noir v-for="hit in hits.gray" v-bind:style="{ backgroundImage:'url('+hit+')' }">
 	</li>
 </ul>
+<h1 id=chives>ARCHIVES</h1>
 </div>
 </div>
 </template>
@@ -259,6 +260,19 @@ ul:nth-child(4) {
 	transform: translateX(-696px);
 }
 
+#redcol a {
+	color: orange;
+}
+#orangecol a {
+	color: pink;
+}
+#pinkcol a {
+	color: black;
+}
+#graycol a {
+	 color: white;
+}
+
 li {
 	background-size: cover;
 	flex-shrink: 0;
@@ -291,6 +305,16 @@ li {
 	left: 20px;
 	font-size: 48px;
 	color: black;
+}
+#chives {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 48px;
+	color: black;
+}
+#two .after a {
+	transform: rotate(-10deg);
 }
 @media(max-width:1200px) {
 	#insta {
