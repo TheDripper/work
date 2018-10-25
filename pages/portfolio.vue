@@ -43,7 +43,7 @@ let php = [
 		{
 			name: "Biochain US",
 			href: "https://www.biochain.com/",
-			desc: "Full WP site build from provided mockups w/ custom Woocommerce Shipping/Checkout functionality",
+			desc: "Full WP site build w/ custom Woocommerce Shipping/Checkout functionality",
 			src: "/bio.png"
 
 		},
@@ -56,7 +56,7 @@ let php = [
 		{
 			name: "Alameda Health Consortium",
 			href: "https://www.alamedahealthconsortium.org/",
-			desc: "Full WP site build from provided mockups incuding WP REST API to merge calendar events across installs",
+			desc: "Full WP site build incuding WP REST API to merge calendar events across installs",
 			src: "/ahc.png"
 		},
 		{
@@ -99,6 +99,9 @@ export default {
 <style>
 ul {
 	list-style: none;
+}
+li {
+	margin-bottom: 20px;
 }
 #js {
 	text-align: right;
