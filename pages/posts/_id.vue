@@ -9,7 +9,7 @@
 
 <h1>Post: {{ id }}</h1>
 <h2>Content Here</h2>
-<a href=/colors/>Back to archive <<< </a>
+<a href=/tape/>Back to archive <<< </a>
 
 <div id=bottom>
 <span id=red class=bar></span>

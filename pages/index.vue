@@ -92,10 +92,10 @@ let php = [
 ]
 let js = [
 	{
-		name: "Color SKU",
-		href: '/colors',
-		desc: 'Blog example pulling color-based stock imagery form pixabay api',
-		src: '/colors.png'
+		name: "HOT TAPE",
+		href: '/tape',
+		desc: 'Example blog layout w/ instagram feed, hot posts + archive. This is a static example but it could be hosted as a live app',
+		src: '/hottape.png'
 
 	},
 	{
