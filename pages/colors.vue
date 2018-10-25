@@ -1,19 +1,19 @@
 <template> 
 <div id=blog>
 <ul>
-	<li v-for="hit in blue" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
+	<li id=blu v-for="hit in blue" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
 	</li>
 </ul>
 <ul>
-	<li v-for="hit in turq" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
+	<li id=tur v-for="hit in turq" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
 	</li>
 </ul>
 <ul>
-	<li v-for="hit in lac" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
+	<li id=lac v-for="hit in lac" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
 	</li>
 </ul>
 <ul>
-	<li v-for="hit in black" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
+	<li id=noir v-for="hit in black" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
 	</li>
 </ul>
 </div>
@@ -51,14 +51,16 @@ html, body {
 	margin: 0;
 }
 #blog {
+	transform: rotate(-90deg);
+	height: 100vw;
 }
 ul {
 	list-style: none;
 	padding: 0;
 	display: flex;
-	transform: rotate(-20deg);
+	transform: rotate(-20deg) translateX(-250vw);
 	transform-origin: right top;
-	height: 40vh;
+	height: 25vw;
 }
 li {
 	width: 25vw;
@@ -68,5 +70,8 @@ li {
 	transform: rotate(90deg);
 	transform-origin: right top;
 
+}
+#blu {
+	background: blue;
 }
 </style>
