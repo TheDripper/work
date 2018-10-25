@@ -1,5 +1,7 @@
 <template> 
 <div id=blog>
+<div id=mages>
+<h1 id=start>OUR STORY BEGINS</h1>
 <ul>
 	<li id=blu v-for="hit in blue" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
 	</li>
@@ -16,6 +18,7 @@
 	<li id=noir v-for="hit in black" v-bind:style="{ backgroundImage:'url('+hit.webformatURL+')' }">
 	</li>
 </ul>
+</div>
 </div>
 </template>
 <script>
@@ -50,7 +53,7 @@ export default {
 html, body {
 	margin: 0;
 }
-#blog {
+#mages {
 	transform: rotate(-90deg);
 	height: 100vw;
 }
@@ -73,5 +76,17 @@ li {
 }
 #blu {
 	background: blue;
+}
+#start {
+	position: absolute;
+	top: 10px;
+	left: -400px;
+	font-size: 64px;
+}
+@media(max-width:700px) {
+	#start {
+		left: -350px;
+		font-size: 32px;
+	}
 }
 </style>
