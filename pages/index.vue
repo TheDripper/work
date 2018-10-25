@@ -105,12 +105,6 @@ let js = [
 		src: '/news.png'
 	},
 	{
-		name: "Autoblog",
-		href: "/auto",
-		desc: "AutoBlog pulls images/text from /r/pics.json but the format can be used on any blog you like.",
-		src: "/auto.png"
-	},
-	{
 		name: "WP Scraper",
 		href: "https://github.com/TheDripper/wpstatic",
 		desc: "IN PROGRESS - Nuxt app to scrape a WP install + generate a static version;;; stuck on chunking templates into <500 lines of markup",
