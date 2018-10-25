@@ -37,7 +37,7 @@ let php = [
 		{
 			name: "Berkeley Food Institute",
 			href: "https://food.berkeley.edu",
-			desc: "Built custom visual layout system for <a target=_blank href='https://food.berkeley.edu/priorities/'>primary</a> + <a target=_blank href='https://food.berkeley.edu/about-us/centers/dfs/'>secondary</a> landing pages + <a target=_blank href='https://food.berkeley.edu/resources/news/'>infinite scroll masonry blog</a>, controlled via ACF",
+			desc: "Site build w/ visual layout system controlled via ACF + <a target=_blank href='https://food.berkeley.edu/resources/news/'>infinite scroll masonry blog</a>, controlled via ACF",
 			src: "/bfi1.png"
 		},
 		{
@@ -83,7 +83,7 @@ let js = [
 	{
 		name: "WP Scraper",
 		href: "https://github.com/TheDripper/wpstatic",
-		desc: "IN PROGRESS - Nuxt app to scrape a WP install + generate a static version;;; stuck on chunking templates into <500 lines of markup",
+		desc: "IN PROGRESS - Nuxt app to scrape a WP install + generate a static version. stuck on chunking templates into <500 lines of markup",
 		src: "/static.jpg"
 	}
 ]
@@ -119,5 +119,10 @@ li {
 #intro {
 	text-align: center;
 	padding: 20px 0;
+}
+@media(max-width:700px) {
+	#word, #node {
+		width: 40% !important;
+	}
 }
 </style>
