@@ -377,6 +377,7 @@ li p {
 	.copy {
 		order: 1 !important;
 		padding: 10px;
+		width: 100%;
 	}
 }
 #leftrow {

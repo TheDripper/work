@@ -3,23 +3,23 @@
 <div class=mages id=one>
 <ul>
 	<span class=after id=blucol><a href=/posts/1>One</a></span>
-	<li id=blu v-for="hit in hits.blue" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=blu v-for="hit in hits.blue" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 
 </ul>
 <ul>
 	<span class=after id=cycol><a href=/posts/2>Two</a></span>
-	<li id=tur v-for="hit in hits.turquoise" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=tur v-for="hit in hits.turquoise" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 </ul>
 <ul>
 	<span class=after id=purpcol><a href=/posts/3>Three</a></span>
-	<li id=lac v-for="hit in hits.lilac" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=lac v-for="hit in hits.lilac" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 </ul>
 <ul>
 	<span class=after id=blackcol><a href=/posts/4>Four</a></span>
-	<li id=noir v-for="hit in hits.black" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=noir v-for="hit in hits.black" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 </ul>
 <h1 id=insta>INSTA</h1>
@@ -28,26 +28,28 @@
 <div class=mages id=two>
 <ul>
 	<span class=after id=redcol><a href=/posts/archive/>Jul</a></span>
-	<li id=blu v-for="hit in hits.red" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=blu v-for="hit in hits.red" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 </ul>
 <ul>
 	<span class=after id=orangecol><a href=/posts/archive/>Aug</a></span>
-	<li id=tur v-for="hit in hits.orange" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=tur v-for="hit in hits.orange" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 </ul>
 <ul>
 	<span class=after id=pinkcol><a href=/posts/archive/>Sep</a></span>
-	<li id=lac v-for="hit in hits.pink" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=lac v-for="hit in hits.pink" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 </ul>
 <ul>
 	<span class=after id=graycol><a href=/posts/archive/>Oct</a></span>
-	<li id=noir v-for="hit in hits.gray" v-bind:style="{ backgroundImage:'url('+hit+')' }">
+	<li id=noir v-for="hit in hits.gray" v-bind:style="{ backgroundImage:'url('+hit.prev+')' }" v-bind:data-full="hit.full" @click="mode">
 	</li>
 </ul>
 <h1 id=chives @click="posts">ARCHIVES</h1>
 <h1 id=back @click="insta">INSTA</h1>
+</div>
+<div id=over @click="clear">
 </div>
 </div>
 </template>
@@ -58,7 +60,7 @@ let getColor = async function(color) {
 	let pics = await axios('https://pixabay.com/api/?key=10493578-e0c15b403dc08f3bc106b40b8&per_page=12&colors='+color)
 	let urls = []
 	pics.data.hits.forEach(hit=>{
-		urls.push(hit.previewURL)
+		urls.push({prev:hit.previewURL,full:hit.webformatURL})
 	})
 	return urls
 }
@@ -78,6 +80,7 @@ export default {
 		for(const color of colors) {
 			hits[color] = await getColor(color)
 		}
+		console.log(hits)
 		return {
 			hits: hits
 		}
@@ -115,6 +118,17 @@ export default {
 			after.forEach(word=>{
 				word.style.marginTop = '40vw';
 			})
+		},
+		mode: function(e) {
+			console.log(e)
+			e.target.style.filter = 'blur(5px)'
+			let src = e.target.dataset.full
+			console.log(src)
+			document.querySelector('#over').style.backgroundImage = 'url('+src+')'
+			document.querySelector('#over').style.display = 'flex'
+		},
+		clear: function(e) {
+			document.querySelector('#over').style.display = 'none'
 		}
 	}
 }
@@ -317,6 +331,7 @@ li {
 	height: 100px;
 	position: relative;
 	z-index: 5;
+	transition: all 0.1s ease;
 }
 #blog {
 	width: 100vw;
@@ -358,6 +373,16 @@ li {
 	bottom: 0;
 	left: 0;
 	display: none;
+}
+#over {
+	position: fixed;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
 }
 @media(max-width:1230px) {
 	#hot {
