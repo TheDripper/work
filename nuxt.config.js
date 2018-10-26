@@ -59,5 +59,14 @@ module.exports = {
     extend(config, ctx) {
       
     }
+  },
+   generate: {
+    routes: [
+      '/posts/1',
+      '/posts/2',
+      '/posts/3',
+      '/posts/4'
+      '/posts/archive'
+    ]
   }
 }
