@@ -215,7 +215,7 @@ ul:nth-child(4) {
 	font-size: 48px;
 	font-weight: bold;
 	transform: rotate(10deg);
-	margin-top: 50vw;
+	margin-top: 40vw;
 }
 #blucol {
 	background: blue;
