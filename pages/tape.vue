@@ -23,7 +23,7 @@
 	</li>
 </ul>
 <h1 id=insta>INSTA</h1>
-<h1 id=hot>HOT TAPE</h1>
+<h1 id=hot @click="posts">HOT TAPE</h1>
 </div>
 <div class=mages id=two>
 <ul>
@@ -46,7 +46,8 @@
 	<li id=noir v-for="hit in hits.gray" v-bind:style="{ backgroundImage:'url('+hit+')' }">
 	</li>
 </ul>
-<h1 id=chives>ARCHIVES</h1>
+<h1 id=chives @click="posts">ARCHIVES</h1>
+<h1 id=back @click="insta">INSTA</h1>
 </div>
 </div>
 </template>
@@ -80,6 +81,41 @@ export default {
 		return {
 			hits: hits
 		}
+	},
+	methods: {
+		posts: function() {
+			let onelists = document.querySelector('#one').querySelectorAll('ul')
+			let twolists = document.querySelector('#two').querySelectorAll('ul')
+			let after = document.querySelectorAll('.after a')
+			document.querySelector('#insta').textContent = 'NEW'
+			document.querySelector('#back').style.display = 'block'
+			onelists.forEach(list=>{
+				list.style.transform = "rotate(-10deg) translate(300px,-5vw)"
+			})
+			twolists.forEach(list=>{
+				list.style.transform = "rotate(10deg) translate(300px,-5vw)"
+			})
+			after.forEach(word=>{
+				word.style.marginTop = '100vw';
+			})
+
+		},
+		insta: function() {
+			let onelists = document.querySelector('#one').querySelectorAll('ul')
+			let twolists = document.querySelector('#two').querySelectorAll('ul')
+			let after = document.querySelectorAll('.after a')
+			document.querySelector('#insta').textContent = 'NEW'
+			document.querySelector('#back').style.display = 'block'
+			onelists.forEach(list=>{
+				list.style.transform = "rotate(-10deg) translateY(-5vw)"
+			})
+			twolists.forEach(list=>{
+				list.style.transform = "rotate(10deg) translateY(-5vw)"
+			})
+			after.forEach(word=>{
+				word.style.marginTop = '40vw';
+			})
+		}
 	}
 }
 </script>
@@ -98,6 +134,7 @@ ul {
 	height: 100vh;
 	position: relative;
 	transform: rotate(-10deg) translateX(50vw);
+	transition: all 0.3s ease;
 }
 #two {
 }
@@ -302,7 +339,7 @@ li {
 #hot {
 	position: absolute;
 	bottom: 20px;
-	left: 20px;
+	left: 0;
 	font-size: 48px;
 	color: black;
 }
@@ -316,6 +353,18 @@ li {
 #two .after a {
 	transform: rotate(-10deg);
 }
+#back {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: none;
+}
+@media(max-width:1230px) {
+	#hot {
+		color: red;
+		transform: translateX(100%);
+	}
+}
 @media(max-width:1200px) {
 	#insta {
 		transform: rotate(-8deg) translateX(-100%);
@@ -323,6 +372,9 @@ li {
 	}
 }
 @media(max-width:430px) {
+	#hot {
+		left: -130px;
+	}
 	ul {
 		transform: rotate(-10deg) translateY(-5vw);
 	}
