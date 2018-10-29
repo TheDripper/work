@@ -56,10 +56,10 @@
 <script>
 let axios = require('axios')
 let getColor = async function(color) {
-	console.log(color)
 	let pics = await axios('https://pixabay.com/api/?key=10493578-e0c15b403dc08f3bc106b40b8&per_page=12&colors='+color)
 	let urls = []
 	pics.data.hits.forEach(hit=>{
+		console.log(hit)
 		urls.push({prev:hit.previewURL,full:hit.webformatURL})
 	})
 	return urls
@@ -80,7 +80,6 @@ export default {
 		for(const color of colors) {
 			hits[color] = await getColor(color)
 		}
-		console.log(hits)
 		return {
 			hits: hits
 		}
@@ -332,6 +331,10 @@ li {
 	position: relative;
 	z-index: 5;
 	transition: all 0.1s ease;
+	cursor: pointer;
+}
+li:hover {
+	transform: scale(0.9);
 }
 #blog {
 	width: 100vw;
