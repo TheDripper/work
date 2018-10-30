@@ -52,6 +52,8 @@
 	<div id=end>
 		<a target=_blank href='https://github.com/thedripper'>Github</a>
 		<a target=_blank href='https://www.linkedin.com/in/tyler-hill-936798110/'>linkedin</a>
+		<a target=_blank href='/resume.pdf'>resume</a>
+		<a target=_blank href='/portfolio'>portfolio</a>
 		<a target=_blank href='mailto:tylerhillwebdev@gmail.com'>tylerhillwebdev@gmail.com</a>
 	</div>
 </div>

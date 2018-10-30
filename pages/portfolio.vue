@@ -69,7 +69,7 @@ let php = [
 let js = [
 	{
 		name: "HOT TAPE",
-		href: '/tape',
+		href: 'http://drownlux.net/tape/',
 		desc: 'Example blog layout w/ instagram feed, hot posts + archive. This is a static example but it could be hosted as a live app',
 		src: '/hottape.png'
 
